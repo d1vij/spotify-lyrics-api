@@ -1,0 +1,20 @@
+{
+  "name": "spotify-lyrics-api",
+  "version": "0.1.0",
+  "description": "",
+  "main": "./dist/SpotifyLyrics.js",
+  "scripts": {
+    "dev": "tsc && node dist/main.js",
+    "build":"tsc"
+  },
+  "files": ["dist", "typings.d.ts"],
+  "keywords": [],
+  "author": "d1vij",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "types": "typings.d.ts",
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "typescript": "^5.9.2"
+  }
+}
