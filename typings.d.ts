@@ -52,3 +52,9 @@ export interface SongLyricsData {
     colors: Colors;
     hasVocalRemoval: boolean;
 }
+
+export default class SpotifyLyricsApi {
+    constructor(sp_dc:string);
+    public async getLyricsFromID(trackId: string): Promise<Lyrics>;
+    public async getLyricsFromURL(trackId: string): Promise<Lyrics>;
+}

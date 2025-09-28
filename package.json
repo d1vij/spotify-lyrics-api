@@ -1,14 +1,22 @@
 {
   "name": "spotify-lyrics-api",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.1",
+  "description": "A simple Node.js wrapper for fetching track lyrics from Spotify using internal endpoints.",
   "main": "./dist/SpotifyLyrics.js",
   "scripts": {
-    "dev": "tsc && node dist/main.js",
-    "build":"tsc"
+    "build": "tsc"
   },
-  "files": ["dist", "typings.d.ts"],
-  "keywords": [],
+  "files": [
+    "dist",
+    "typings.d.ts"
+  ],
+  "keywords": [
+    "spotify",
+    "lyrics",
+    "api",
+    "scraper",
+    "typescript"
+  ],
   "author": "d1vij",
   "license": "GPL-3.0-only",
   "type": "module",

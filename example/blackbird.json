@@ -1,0 +1,220 @@
+{
+  "lyrics": {
+    "syncType": "LINE_SYNCED",
+    "lines": [
+      {
+        "startTimeMs": "4530",
+        "words": "Blackbird singing in the dead of night",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "9150",
+        "words": "Take these broken wings and learn to fly",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "14300",
+        "words": "All your life",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "18310",
+        "words": "You were only waiting for this moment to arise",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "28440",
+        "words": "Blackbird singing in the dead of night",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "32900",
+        "words": "Take these sunken eyes and learn to see",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "38140",
+        "words": "All your life",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "41930",
+        "words": "You were only waiting for this moment to be free",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "47070",
+        "words": "Blackbird fly",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "52010",
+        "words": "Blackbird fly",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "56430",
+        "words": "Into the light of a dark, black night",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "60260",
+        "words": "♪",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "76920",
+        "words": "Blackbird fly",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "82030",
+        "words": "Blackbird fly",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "86310",
+        "words": "Into the light of a dark, black night",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "89730",
+        "words": "♪",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "107040",
+        "words": "Blackbird singing in the dead of night",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "111480",
+        "words": "Take these broken wings and learn to fly",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "116500",
+        "words": "All your life",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "120480",
+        "words": "You were only waiting for this moment to arise",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "125480",
+        "words": "You were only waiting for this moment to arise",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "130450",
+        "words": "You were only waiting for this moment to arise",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "135840",
+        "words": "",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      }
+    ],
+    "provider": "MusixMatch",
+    "providerLyricsId": "168735229",
+    "providerDisplayName": "Musixmatch",
+    "syncLyricsUri": "",
+    "isDenseTypeface": false,
+    "alternatives": [],
+    "language": "en",
+    "isRtlLanguage": false,
+    "capStatus": "NONE",
+    "previewLines": [
+      {
+        "startTimeMs": "4530",
+        "words": "Blackbird singing in the dead of night",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "9150",
+        "words": "Take these broken wings and learn to fly",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "14300",
+        "words": "All your life",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "18310",
+        "words": "You were only waiting for this moment to arise",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "28440",
+        "words": "Blackbird singing in the dead of night",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      }
+    ]
+  },
+  "colors": {
+    "background": -9079435,
+    "text": -16777216,
+    "highlightText": -1
+  },
+  "hasVocalRemoval": false
+}

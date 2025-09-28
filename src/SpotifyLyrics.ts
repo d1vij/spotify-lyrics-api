@@ -1,27 +1,52 @@
 import crypto from "crypto";
-import { IAccessToken, ISecretKey, IServerTimeParams, Lyrics } from "../typings";
+import {
+    IAccessToken,
+    ISecretKey,
+    IServerTimeParams,
+    Lyrics
+} from "../typings.js";
 
+export class SpotifyLyricsApi {
 
+    /**
+     * Latest Spotify Secrets
+    */
+    private secretKeyUrl = "https://raw.githubusercontent.com/Thereallo1026/spotify-secrets/refs/heads/main/secrets/secrets.json";
 
-
-
-export class SpotifyLyrics {
-
-    // Gives the current epoch time of spotify server -> {serverTime":1759060399}
+    /**
+     * Returns the current epoch time of spotify's server -> {serverTime":1759060399}
+     * Used for generating time based SHA-1 TOTP which is used to generate the Access Token
+     * required for requesting Lyrics.
+     */
     private serverTimeUrl = "https://open.spotify.com/api/server-time";
 
-    // Returns the token required for sending request for lyrics
+
+    /**
+     *  Endpoint for requesting Access Token.
+     * */
     private tokenUrl = "https://open.spotify.com/api/token";
 
-    // Returns the lyrics data;
+
+    /**
+     * Endpoint for requesting the track lyrics
+     */
     private lyricsUrl = "https://spclient.wg.spotify.com/color-lyrics/v2/track/";
 
-    // Latest spotify secrets
-    private secretKeyUrl = "https://raw.githubusercontent.com/Thereallo1026/spotify-secrets/refs/heads/main/secrets/secrets.json";
+    /**
+     * User's sp_dc token. 
+     * By using this we basically trick the spotify's api into thinking
+     * that it is the User's client which is sending the request.
+     */
     private sp_dc: string;
 
+    /**
+     * Caching the token for inbetween requests.
+     */
     private cachedToken: IAccessToken | undefined;
-    
+
+    private secret: string | undefined;
+    private version: string | undefined;
+
     constructor(sp_dc: string) {
         this.sp_dc = sp_dc;
     }
@@ -34,6 +59,9 @@ export class SpotifyLyrics {
         return baseUrl + "?" + params.join("&");
     }
 
+    /**
+     * Fetching the latest spotify secret key from @Thereallo1026 's repo
+     */
     private async getLatestSecretKey(): Promise<ISecretKey> {
         const response = await fetch(this.secretKeyUrl);
         const secretKeyObj = await response.json();
@@ -51,8 +79,10 @@ export class SpotifyLyrics {
         return transformed.join('');
     }
 
+    /**
+     * Generates a 6 digit time based OTP (totp)
+     */
     private generateTimeBasedOTP(serverTimeMs: number, secret: string) {
-        // Generates a TOTP based on sha1 algorithm
         const period = 30;
         const digits = 6;
 
@@ -82,16 +112,20 @@ export class SpotifyLyrics {
 
         if (serverTime === undefined) throw new Error("Server Time is undefined");
 
-        const { version, secret } = await this.getLatestSecretKey();
-        const transformed = this.transformSecretKey(secret);
+        // Caching Version and Secret for this runtime.
+        if (this.version === undefined || this.secret === undefined) {
+            const { version, secret } = await this.getLatestSecretKey();
+            this.version = version;
+            this.secret = this.transformSecretKey(secret);
+        }
 
-        const totp = this.generateTimeBasedOTP(serverTime, transformed);
+        const totp = this.generateTimeBasedOTP(serverTime, this.secret);
         const currTime = Date.now().toString();
         return {
             "reason": "transport",
             "productType": "web-player",
             "totp": totp,
-            "totpVer": version,
+            "totpVer": this.version,
             "ts": currTime
         }
     }
@@ -99,7 +133,6 @@ export class SpotifyLyrics {
     private async getAccessToken(): Promise<IAccessToken> {
         const params = await this.generateServerTimeParams();
         const url = this.buildQueryUrl(this.tokenUrl, params);
-        console.log(`Token url `, url);
 
         const response = await fetch(url, {
             headers: {
@@ -108,34 +141,51 @@ export class SpotifyLyrics {
             },
         })
 
-        const json = await response.json();
-        if (json["isAnonymous"] === undefined || json["isAnonymous"] === true) throw new Error("SP_DC passed is invalid");
-        return json;
+        const accessTokenObj = await response.json();
+
+        if (accessTokenObj["isAnonymous"] === undefined
+            || accessTokenObj["isAnonymous"] === true) throw new Error("SP_DC passed is invalid");
+
+        return accessTokenObj;
     }
 
-    private async validateAccessToken(){
-        if(this.cachedToken === undefined){
+    // Caching accesss token
+    private async validateAccessToken() {
+        if (this.cachedToken === undefined) {
             this.cachedToken = await this.getAccessToken();
             return;
         }
-        if(this.cachedToken.accessTokenExpirationTimestampMs >= Date.now().toString()){
+        if (parseInt(this.cachedToken.accessTokenExpirationTimestampMs) >= Date.now()) {
             this.cachedToken = await this.getAccessToken();
             return;
         }
     }
-    
-    public async getLyricsFor(trackId:string): Promise<Lyrics>{
+
+    public async getLyricsFromID(trackId: string): Promise<Lyrics> {
         await this.validateAccessToken();
 
         const url = `${this.lyricsUrl}${trackId}?format=json&market=from_token`;
         const response = await fetch(url, {
-            headers :{
+            headers: {
+                // Spotify's server thinks we are sending a genuine request from browser's web player
                 "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36",
                 "App-platform": "WebPlayer",
                 "authorization": `Bearer ${this.cachedToken?.accessToken}`
             }
         })
-        const json = await response.json();
-        return json;
+        if (response.ok === false || response.status === 404)
+            throw new Error(`Error in fetching lyrics, Status Code returned ${response.status}, Status Text returned ${response.statusText}`);
+
+        const lyricsResponseObj = await response.json();
+        return lyricsResponseObj;
+    }
+    
+    public async getLyricsFromURL(trackUrl: string): Promise<Lyrics> {
+        const regex = /^(?:https?:\/\/)?open\.spotify\.com\/track\/([^?\/]+)/;
+        const results = regex.exec(trackUrl);
+        if (results === null) throw new Error("Error in parsing track url " + trackUrl);
+        const trackId = results[1];
+        if (trackId === undefined) throw new Error("Error in parsing track url " + trackUrl);
+        return this.getLyricsFromID(trackId);
     }
 }

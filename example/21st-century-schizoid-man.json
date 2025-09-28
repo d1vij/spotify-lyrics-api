@@ -1,0 +1,164 @@
+{
+  "lyrics": {
+    "syncType": "LINE_SYNCED",
+    "lines": [
+      {
+        "startTimeMs": "48480",
+        "words": "Cat's foot, iron claw",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "52330",
+        "words": "Neuro-surgeons scream for more",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "55720",
+        "words": "At paranoia's poison door",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "58840",
+        "words": "21st century schizoid man",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "64100",
+        "words": "♪",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "82400",
+        "words": "Blood rack, barbed wire",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "86280",
+        "words": "Politician's funeral pyre",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "89570",
+        "words": "Innocents raped with napalm fire",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "93220",
+        "words": "21st century schizoid man",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "98480",
+        "words": "♪",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "367330",
+        "words": "Death seed, blind man's greed",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "370820",
+        "words": "Poets starving, children bleed",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "373910",
+        "words": "Nothing he's got he really needs",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "377390",
+        "words": "21st century schizoid man",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "380510",
+        "words": "",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      }
+    ],
+    "provider": "MusixMatch",
+    "providerLyricsId": "313626",
+    "providerDisplayName": "Musixmatch",
+    "syncLyricsUri": "",
+    "isDenseTypeface": false,
+    "alternatives": [],
+    "language": "en",
+    "isRtlLanguage": false,
+    "capStatus": "UNCAPPED",
+    "previewLines": [
+      {
+        "startTimeMs": "48480",
+        "words": "Cat's foot, iron claw",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "52330",
+        "words": "Neuro-surgeons scream for more",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "55720",
+        "words": "At paranoia's poison door",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "58840",
+        "words": "21st century schizoid man",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      },
+      {
+        "startTimeMs": "64100",
+        "words": "♪",
+        "syllables": [],
+        "endTimeMs": "0",
+        "transliteratedWords": ""
+      }
+    ]
+  },
+  "colors": {
+    "background": -4564647,
+    "text": -16777216,
+    "highlightText": -1
+  },
+  "hasVocalRemoval": false
+}
