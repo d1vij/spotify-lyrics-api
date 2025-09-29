@@ -6,7 +6,7 @@ import {
     Lyrics
 } from "../typings.js";
 
-export class SpotifyLyricsApi {
+export default class SpotifyLyricsApi {
 
     /**
      * Latest Spotify Secrets
