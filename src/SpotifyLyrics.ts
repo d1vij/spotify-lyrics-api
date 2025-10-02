@@ -1,11 +1,5 @@
 import crypto from "crypto";
-import {
-    IAccessToken,
-    ISecretKey,
-    IServerTimeParams,
-    Lyrics
-} from "../typings.js";
-
+import { IAccessToken, ISecretKey, IServerTimeParams, SongLyricsData } from "spotify-lyrics-api";
 export default class SpotifyLyricsApi {
 
     /**
@@ -161,7 +155,7 @@ export default class SpotifyLyricsApi {
         }
     }
 
-    public async getLyricsFromID(trackId: string): Promise<Lyrics> {
+    public async getLyricsFromID(trackId: string): Promise<SongLyricsData> {
         await this.validateAccessToken();
 
         const url = `${this.lyricsUrl}${trackId}?format=json&market=from_token`;
@@ -180,7 +174,7 @@ export default class SpotifyLyricsApi {
         return lyricsResponseObj;
     }
     
-    public async getLyricsFromURL(trackUrl: string): Promise<Lyrics> {
+    public async getLyricsFromURL(trackUrl: string): Promise<SongLyricsData> {
         const regex = /^(?:https?:\/\/)?open\.spotify\.com\/track\/([^?\/]+)/;
         const results = regex.exec(trackUrl);
         if (results === null) throw new Error("Error in parsing track url " + trackUrl);

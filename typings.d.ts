@@ -61,4 +61,10 @@ declare module "spotify-lyrics-api" {
     public getLyricsFromID(trackId: string): Promise<Lyrics>;
     public getLyricsFromURL(url: string): Promise<Lyrics>;
   }
+  export class SpotifyLyricsApi {
+    constructor(sp_dc: string);
+
+    public getLyricsFromID(trackId: string): Promise<Lyrics>;
+    public getLyricsFromURL(url: string): Promise<Lyrics>;
+  }
 }
